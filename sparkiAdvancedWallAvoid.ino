@@ -12,9 +12,10 @@ void setup()
 void loop() 
 {
   int checkDistances[6];
-  int angleToCheck[6] = -30, -60, -90, 0, 30, 60, 90;
+  int angleToCheck[7] = {-30, -60, -90, 0, 30, 60, 90};
   int initialDistance = sparki.ping();
-  int greatestDistance;
+  int greatestDistance = 0;
+  int whichDistance = 0;
 
   if(initialDistance != -1)
   {
@@ -30,11 +31,20 @@ void loop()
         checkDistances[i] = sparki.ping();
         delay(200);
       }
+      
       // Evaluate which element of checkDistances[] had the greatest value
       for(int i = 0; i <= 6; i++) 
       {
+        greatestDistance = checkDistances[i]; 
         
+        if(checkDistances[i] > greatestDistance)
+        {
+          greatestDistance = checkDistances[i];
+          whichDistance = i;
+        }
       }
+
+      
     }
   sparki.moveForward();
   delay(100);
