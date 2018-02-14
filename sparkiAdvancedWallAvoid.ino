@@ -46,6 +46,35 @@ void loop()
         }
       }
 
+      if(whichDistance == 0)
+      {
+        sparki.moveLeft(angleToTurnLeft[0]);
+      }
+      else if(whichDistance == 1)
+      {
+        sparki.moveLeft(angleToTurnLeft[1]);
+      }
+      else if(whichDistance == 2)
+      {
+        sparki.moveLeft(angleToTurnLeft[2]);
+      }
+      else if(whichDistance == 3)
+      {
+        
+      }
+      else if(whichDistance == 4)
+      {
+        sparki.moveRight(angleToTurnRight[0]);
+      }
+      else if(whichDistance == 5)
+      {
+        sparki.moveRight(angleToTurnRight[1]);
+      }
+      else if(whichDistance == 6)
+      {
+        sparki.moveRight(angleToTurnRight[2]);
+      }
+
       
     }
   sparki.moveForward();
